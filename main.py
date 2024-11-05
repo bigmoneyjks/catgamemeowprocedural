@@ -1,4 +1,5 @@
 from images import *
+import termcolor
 
 cat_attributes = {
     "intelligence": 3,
@@ -6,7 +7,7 @@ cat_attributes = {
     "weight": 4,
 }
 
-print("Welcome to my cat game!")
+cprint("Welcome to my cat game!","")
 
 # Take the user inputs for name and colour:
 name = input("Enter name of cat: ")
@@ -26,9 +27,9 @@ while True:
         cat_attributes["energy"] -= 7
         cat_attributes["weight"] += 0.3
         cat_attributes["intelligence"] += 0.3
-    elif option == "3":
+    elif option == "3" and cat_attributes["energy"] < 20:
         print("Your cat eats a 3 course exotic meal")
-        cat_attributes["energy"] += 4
+        cat_attributes["energy"] = 20
         cat_attributes["weight"] += 0.1
     elif option == "4":
         print("Your cat curls up and snores loudly")
